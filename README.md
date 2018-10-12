@@ -1,4 +1,4 @@
-#CustomUndertowFilter
+# CustomUndertowFilter
 
 Custom filter/handler to intecept requests to wildfly server.
 
@@ -19,6 +19,13 @@ To add the filter to server add the following configuration in the undertow subs
 	module="lk.kana.elytron.custom-filter"
 	class-name="lk.kana.elytron.custom_filter.CustomUndertowHandler"/>
 
+	 <filter name="custom-timer-filter" 
+	 		module="lk.kana.elytron.custom-filter:1" 
+	 		class-name="lk.kana.elytron.custom_filter.ResponseTimeHandler">
+	 		
+         <param name="param1" value="value1"/>
+	 </filter>
+
 </filters>
 
 ```
@@ -29,7 +36,8 @@ To add the filter to server add the following configuration in the undertow subs
 <host ...>
 
 	<filter-ref name="myCustomHandler"/>
-
+	
+	<filter-ref name="custom-timer-filter"/>
 ...
 
 </host>
