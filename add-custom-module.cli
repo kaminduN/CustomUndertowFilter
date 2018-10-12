@@ -1,0 +1,3 @@
+# Add the custom filter module to the server
+
+module add --name=lk.kana.elytron.custom-filter --resources=target/CustomUndertowFilter-1.0.0-SNAPSHOT.jar --dependencies=io.undertow.core,org.jboss.logging
